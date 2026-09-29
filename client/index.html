@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gemini Voice Agent</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+    button { padding: .6rem 1.4rem; font-size: 1rem; border-radius: 8px; border: 0; background: #1a73e8; color: #fff; cursor: pointer; }
+    button:disabled { opacity: .5; }
+    #status { color: #666; margin-left: .5rem; }
+    #log { height: 55vh; overflow-y: auto; border: 1px solid #ddd; border-radius: 8px; padding: .75rem; margin: 1rem 0; }
+    .line { margin: .35rem 0; }
+    .user::before { content: "You: "; font-weight: 600; }
+    .agent::before { content: "Agent: "; font-weight: 600; color: #1a73e8; }
+    .tool { color: #666; font-family: monospace; font-size: .85rem; }
+    .error { color: #c5221f; }
+    form { display: flex; gap: .5rem; }
+    input { flex: 1; padding: .5rem; border-radius: 6px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h1>Gemini Voice Agent</h1>
+  <div><button id="toggle">Start</button><span id="status">Idle</span></div>
+  <div id="log"></div>
+  <form id="textForm"><input id="textInput" placeholder="Or type a message..." disabled /><button>Send</button></form>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
